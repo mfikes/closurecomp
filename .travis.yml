@@ -61,11 +61,8 @@ script:
   - grep '0 failures, 0 errors.' test-out.txt
   - script/test-cli nashorn | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
-  - script/test-cli rhino | tee test-out.txt
-  - grep '0 failures, 0 errors.' test-out.txt
   - script/clean
   - script/bootstrap --closure-library-head
-  - script/uberjar
   - mkdir -p builds/out-adv
   - bin/cljsc src/test/cljs "{:optimizations :advanced
                               :output-wrapper true
@@ -90,7 +87,6 @@ script:
                                              {:file \"src/test/cljs/es6_default_hello.js\"
                                               :provides [\"es6_default_hello\"]
                                               :module-type :es6}]}" > builds/out-adv/core-advanced-test.js
-  - lein with-profile +closure-snapshot test
   - jsc builds/out-adv/core-advanced-test.js | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
   - ./spidermoney/js -f builds/out-adv/core-advanced-test.js | tee test-out.txt
@@ -102,10 +98,4 @@ script:
   - script/test-self-host | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
   - script/test-self-parity | tee test-out.txt
-  - grep '0 failures, 0 errors.' test-out.txt
-  - script/test-cli node | tee test-out.txt
-  - grep '0 failures, 0 errors.' test-out.txt
-  - script/test-cli nashorn | tee test-out.txt
-  - grep '0 failures, 0 errors.' test-out.txt
-  - script/test-cli rhino | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
