@@ -93,6 +93,5 @@ script:
   - grep '0 failures, 0 errors.' test-out.txt
   - script/test-self-host | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
-# Need CLJS-2769 for this:
-#  - script/test-self-parity | tee test-out.txt
-#  - grep '0 failures, 0 errors.' test-out.txt
+  - script/test-self-parity | tee test-out.txt
+  - grep '0 failures, 0 errors.' test-out.txt
