@@ -44,8 +44,7 @@ script:
                                              {:file \"src/test/cljs/es6_default_hello.js\"
                                               :provides [\"es6_default_hello\"]
                                               :module-type :es6}]}" > builds/out-adv/core-advanced-test.js
-# Need CLJS-2703 for this:
-#  - lein with-profile +closure-snapshot test
+  - lein with-profile +closure-snapshot test
   - jsc builds/out-adv/core-advanced-test.js | tee test-out.txt
   - grep '0 failures, 0 errors.' test-out.txt
   - ../spidermoney/js -f builds/out-adv/core-advanced-test.js | tee test-out.txt
