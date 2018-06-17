@@ -1,5 +1,5 @@
-# closurelatest
+# closurecomp
 
-Checks that ClojureScript works fine with latest Closure Compiler and Library
+Checks that ClojureScript works fine with latest Closure Compiler.
 
-[![Build Status](https://travis-ci.org/mfikes/closurelatest.svg?branch=master)](https://travis-ci.org/mfikes/closurelatest)
+[![Build Status](https://travis-ci.org/mfikes/closurecomp.svg?branch=master)](https://travis-ci.org/mfikes/closurecomp)
