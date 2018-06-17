@@ -1,4 +1,4 @@
-# closure-latest
+# closurelatest
 
 Checks that ClojureScript works fine with latest Closure Compiler and Library
 
