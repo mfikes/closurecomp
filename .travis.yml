@@ -16,8 +16,9 @@ before_install:
   - tar xvzf chakra-core.tar.gz
 
 script:
-  - git clone https://github.com/clojure/clojurescript
+  - git clone $CANARY_CLOJURESCRIPT_REPO 
   - cd clojurescript
+  - git checkout $CANARY_CLOJURESCRIPT_REV
   - script/bootstrap --closure-compiler-snapshot
   - script/uberjar
   - mkdir -p builds/out-adv
