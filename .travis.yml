@@ -20,7 +20,9 @@ script:
   - cd clojurescript
   - git checkout $CANARY_CLOJURESCRIPT_REV
   - script/bootstrap --closure-compiler-snapshot
-  - script/uberjar
+  - sed 's/lein uberjar/lein with-profile +closure-snapshot uberjar/g' script/uberjar > script/uberjar-closure-snapshot
+  - chmod +x script/uberjar-closure-snapshot
+  - script/uberjar-closure-snapshot
   - mkdir -p builds/out-adv
   - bin/cljsc src/test/cljs "{:optimizations :advanced
                               :output-wrapper true
